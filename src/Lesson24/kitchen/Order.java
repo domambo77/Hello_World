@@ -10,9 +10,11 @@ public class Order {
     private final Tablet tablet;
     protected List<Dish> dishes;
 
+
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
-        this.dishes = ConsoleHelper.getAllDishesForOrder();
+        //this.dishes = ConsoleHelper.getAllDishesForOrder();
+        initDishes();
     }
 
     public List<Dish> getDishes(){
@@ -30,12 +32,14 @@ public class Order {
         return dishes.isEmpty();
     }
 
+    protected void initDishes() throws IOException {
+        this.dishes = ConsoleHelper.getAllDishesForOrder();
+    }
+
     @Override
     public String toString() {
-        return "Order{" +
-                "tablet=" + tablet +
-                ", dishes=" + dishes +
-                "getTotalCookingTime()" + getTotalCookingTime()+ "min" +
-                '}';
+        return  tablet +
+                ", dishes = " + dishes +
+                " Total cooking time - " + getTotalCookingTime()+ " min. ";
     }
 }

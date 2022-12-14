@@ -9,14 +9,14 @@ public class CookedOrderEventDataRow implements EventDataRow {
     private String tabletName;
     private String cookName;
     private int cookingTimeSeconds;
-    private List<Dish> cookingDishs;
+    private List<Dish> cookingDishes;
     private Date currentDate;
 
-    public CookedOrderEventDataRow(String tabletName, String cookName, int cookingTimeSeconds, List cookingDishs, Date currentDate) {
+    public CookedOrderEventDataRow(String tabletName, String cookName, int cookingTimeSeconds, List cookingDishes, Date currentDate) {
         this.tabletName = tabletName;
         this.cookName = cookName;
         this.cookingTimeSeconds = cookingTimeSeconds;
-        this.cookingDishs = cookingDishs;
+        this.cookingDishes = cookingDishes;
         this.currentDate = new Date();
     }
 
@@ -32,8 +32,8 @@ public class CookedOrderEventDataRow implements EventDataRow {
         return cookingTimeSeconds;
     }
 
-    public List<Dish> getCookingDishs() {
-        return cookingDishs;
+    public List<Dish> getCookingDishes() {
+        return cookingDishes;
     }
 
     public Date getCurrentDate() {

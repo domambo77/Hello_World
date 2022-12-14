@@ -6,8 +6,9 @@ public class Advertisement {
     private final long initialAmount;
     private int hits;
     private final int duration;
-
     private long amountPerOneDisplaying;
+
+
 
     public Advertisement(Object content, String name, long initialAmount, int hits, int duration) {
         this.content = content;
@@ -15,6 +16,7 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
+
         if (hits > 0) {
             amountPerOneDisplaying = initialAmount / hits;
         }
@@ -51,7 +53,25 @@ public class Advertisement {
         hits--;
     }
 
+    public void setHits(int hits) {
+        this.hits = hits;
+    }
 
+    public void setAmountPerOneDisplaying(long amountPerOneDisplaying) {
+        this.amountPerOneDisplaying = amountPerOneDisplaying;
+    }
 
+    public boolean isActive() {
+        return hits > 0;
+    }
 
+  /**  @Override
+    public String toString() {
+        return "Advertisement content: " + content +
+                ", name: " + name +
+                ", initialAmount:  " + initialAmount +
+                ", hits: " + hits +
+                ", duration:  " + duration +
+                ", amountPerOneDisplaying: " + amountPerOneDisplaying;
+    }*/
 }

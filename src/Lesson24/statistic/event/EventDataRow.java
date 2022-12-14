@@ -3,8 +3,8 @@ package Lesson24.statistic.event;
 import java.util.Date;
 
 public interface EventDataRow {
-    EventType getType();
+   public EventType getType();
 
-   Date getDate();
-   int getTime();
+  public Date getDate();
+  public int getTime();
 }
